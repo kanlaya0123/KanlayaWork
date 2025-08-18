@@ -3,7 +3,7 @@ name: Kanlaya
 on:
   workflow_dispatch:
 
-job:
+jobs:
   runs-on: ubuntu-latest
   steps:
     run: echo "Hello Kanlaya"
