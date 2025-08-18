@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: itmyname
-        run: echo "Hello Kanlaya from ${{ myname }}"
+        run: echo "Hello Kanlaya from ${{ env.myname }}"
