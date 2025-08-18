@@ -3,9 +3,12 @@ name: Kanlaya
 on:
   workflow_dispatch:
 
+env:
+  myname: Thailand
+
 jobs:
   echo:
     runs-on: ubuntu-latest
     steps:
       - name: itmyname
-        run: echo "Hello Kanlaya"
+        run: echo "Hello Kanlaya from ${{ myname }}"
