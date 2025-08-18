@@ -1,0 +1,9 @@
+name: Kanlaya
+
+on:
+  workflow_dispatch:
+
+job:
+  runs-on: ubuntu-latest
+  steps:
+    run: echo "Hello Kanlaya"
