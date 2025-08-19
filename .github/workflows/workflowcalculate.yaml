@@ -1,0 +1,17 @@
+name: Calculate Grade
+
+on:
+  workflow_dispatch:
+
+jobs:
+  echorunner:
+    runs-on: app1
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: itmyname
+        run: |
+          ls -la
+          pwd
