@@ -1,4 +1,4 @@
-name: Calculate Grade
+name: CalculateGrade
 
 on:
   workflow_dispatch:
@@ -9,9 +9,15 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-        
+          uses: actions/checkout@v2
+
       - name: itmyname
+          run: |
+            ls -la
+            pwd
+
+      - name: build
         run: |
-          ls -la
-          pwd
+          docker build -t imagecalculate:v01 ./calgrade
+          docker tag imagecalculate:v01 kanlayamu/kanlaya:calculateV01
+          docker images          
