@@ -12,9 +12,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: itmyname
-          run: |
-            ls -la
-            pwd
+        run: |
+          ls -la
+          pwd
 
       - name: build
         run: |
