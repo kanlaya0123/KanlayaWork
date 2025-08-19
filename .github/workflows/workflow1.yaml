@@ -1,7 +1,7 @@
-name: Kanlaya1
+name: Kanlaya2
 
 on: 
-  workflow_dispatch:
+  push:
 
 jobs:
   build:
