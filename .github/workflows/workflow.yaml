@@ -20,6 +20,6 @@ jobs:
           pwd
 
       - name: build
-        run:
+        run: |
           docker build -t kanlayaimage:v01 ./node/js
-          
+          docker images
