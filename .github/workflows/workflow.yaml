@@ -14,3 +14,4 @@ jobs:
         run: |
           echo "Hello Kanlaya from ${{ env.myname }}"
           ls -la
+          pwd
