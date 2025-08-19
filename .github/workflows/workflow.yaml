@@ -8,7 +8,9 @@ env:
 
 jobs:
   echo:
-    runs-on: ubuntu-latest
+    runs-on: app1
     steps:
       - name: itmyname
-        run: echo "Hello Kanlaya from ${{ env.myname }}"
+        run: |
+          echo "Hello Kanlaya from ${{ env.myname }}"
+          ls -la
