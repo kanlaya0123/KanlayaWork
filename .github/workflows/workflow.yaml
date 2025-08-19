@@ -18,4 +18,8 @@ jobs:
         run: |
           ls -la
           pwd
+
+      - name: build
+        run:
+          docker build -t kanlayaimage:v01 .
           
