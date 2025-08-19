@@ -1,6 +1,6 @@
-name: Kanlaya
+name: Kanlaya #ชื่อที่ show บน github
 
-on:
+on: 
   workflow_dispatch:
 
 env:

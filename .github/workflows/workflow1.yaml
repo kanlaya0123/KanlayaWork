@@ -1,0 +1,10 @@
+name: Kanlaya1
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    step:
+      - run: echo "Hello"
