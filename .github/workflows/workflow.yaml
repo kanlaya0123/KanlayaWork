@@ -34,3 +34,13 @@ jobs:
       - name: push
         run: |
           docker push kanlayamu/kanlaya:v001      
+
+
+  deploy:
+    runs-on: app1
+    steps:    
+
+      - name: container
+        run: |
+          docker run -d --name container007 kanlayamu/kanlaya:v001
+          docker ps -a      
