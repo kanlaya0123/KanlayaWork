@@ -32,4 +32,13 @@ jobs:
         run: |
           docker push kanlayamu/kanlaya:calculateV01    
 
+  deploy:
+    runs-on: app1
+    steps:
+
+      - name: container
+        run: |
+          docker run -d --name CalculateGrade kanlayamu/kanlaya:calculateV01
+          docker ps -a
+
 
