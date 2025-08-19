@@ -1,0 +1,43 @@
+name: CalculateGrade
+
+on:
+  workflow_dispatch:
+
+jobs:
+  echorunner:
+    runs-on: app1
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: itmyname
+        run: |
+          ls -la
+          pwd
+
+      - name: build
+        run: |
+          docker build -t imagecalculate:v01 ./calgrade
+          docker tag imagecalculate:v01 kanlayamu/kanlaya:calculateV01
+          docker images
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.name }}
+          password: ${{ secrets.Pass }}
+
+      - name: push
+        run: |
+          docker push kanlayamu/kanlaya:calculateV01    
+
+  deploy:
+    runs-on: app1
+    steps:
+
+      - name: container
+        run: |
+          docker run -d --name CalculateGrade kanlayamu/kanlaya:calculateV01
+          docker ps -a
+
