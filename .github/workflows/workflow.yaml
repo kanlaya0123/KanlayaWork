@@ -41,6 +41,7 @@ jobs:
 
 
   deploy:
+    needs: echo
     runs-on: app1
     steps:    
 
