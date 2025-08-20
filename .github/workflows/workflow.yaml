@@ -25,8 +25,8 @@ jobs:
 
       - name: build
         run: |
-          docker build -t kanlayaimage:v01 ./node/js
-          docker tag kanlayaimage:v01 kanlayamu/kanlaya:v001
+          docker build -t kanlayaimage:${{ github.event.inputs.tag }} ./node/js
+          docker tag kanlayaimage:${{ github.event.inputs.tag }} kanlayamu/kanlaya:${{ github.event.inputs.tag }}
           docker images          
 
       - name: Login to Docker Hub
@@ -37,7 +37,7 @@ jobs:
 
       - name: push
         run: |
-          docker push kanlayamu/kanlaya:v001      
+          docker push kanlayamu/kanlaya:${{ github.event.inputs.tag }}     
 
 
   deploy:
@@ -46,5 +46,5 @@ jobs:
 
       - name: container
         run: |
-          docker run -d --name container007 kanlayamu/kanlaya:v001
+          docker run -d --name container007 kanlayamu/kanlaya:${{ github.event.inputs.tag }}
           docker ps -a      
